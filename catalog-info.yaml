@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: evident-meadowlark-nodejs-gitops
+  description: This is GitOps manifest for evident-meadowlark-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: evident-meadowlark-nodejs
+    janus-idp.io/tekton: evident-meadowlark-nodejs 
+    backstage.io/kubernetes-id: evident-meadowlark-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:evident-meadowlark-nodejs
